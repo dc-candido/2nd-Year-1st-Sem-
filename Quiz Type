@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+ int main()
+ {
+	 	string Japan, capital="Tokyo";
+    cout<<"What is the Capital of Japan?:\n";
+	 	cout<<"Ans:";
+    cin>>Japan;
+ 
+ 	if ((Japan==capital)){ cout<<"\nCorrect!\n";
+	 	cout<<"Thanks for participating.\n";
+ }
+else{
+   cout<<"\nOops, the answer you entered is wrong.\n";
+}
+    
+	 	return 0;
+ }
