@@ -1,0 +1,27 @@
+#include <iostream>
+
+int main() {
+    int age1, age2, age3, O, Y;
+    
+    printf("Enter age1, age2, age3:\n");
+    scanf("%d %d %d", &age1, &age2, &age3);
+    
+    if (age1 > age2 && age1 > age3)
+        O = age1;
+    else if (age2 > age3)
+        O = age2;
+    else
+        O = age3;
+    
+    if (age1 < age2 && age1 < age3)
+        Y = age1;
+    else if (age2 < age3)
+        Y = age2;
+    else
+        Y = age3;
+    
+    printf("%d is Oldest.\n", O);
+    printf("%d is Youngest.\n", Y);
+    
+    return 0;
+}
