@@ -1,0 +1,27 @@
+#include <iostream> 
+using namespace std;
+
+int main() {
+    string username;
+    string password;
+    string choice;
+
+    do {
+        cout << "Enter your username: ";
+        cin >> username;
+        cout << "Enter your password: ";
+        cin >> password;
+
+        if (username == "admin2" && password == "admin12345") {
+            cout << "Login successful!";
+            break;  // Exit the loop if login successful
+        } else {
+            cout << "Login failed, please try again.";
+        }
+
+        cout << "\n\nDo you want to continue [Y/y for Yes and Type any key to stop]? ";
+        cin >> choice;
+    } while (choice == "Y" || choice == "y");
+
+    return 0;
+}
