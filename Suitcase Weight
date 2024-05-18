@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+ int main()
+ {
+	 	float weight;
+ 	cout<<" How many pounds does your suitcase weigh: ";
+ 	cin>>weight;
+ 
+	 	if (weight>50){
+	 	cout<<" There is a $25 charge for luggage that heavy.";
+ }
+else{ cout<<"Thank you for your business."<<endl;
+}
+	 	return 0;
+ }
