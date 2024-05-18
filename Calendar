@@ -1,0 +1,53 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+// Function to print a month
+void printMonth(int month, int &startDay, int daysInMonth) {
+    const char* months[] = {
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    };
+    
+    cout << "  " << months[month - 1] << " 2023" << endl;
+    cout << "  Sun  Mon  Tue  Wed  Thu  Fri  Sat" << endl;
+
+    // Print initial spaces
+    for (int i = 0; i < startDay; ++i) {
+        cout << "     ";
+    }
+
+    // Print all days of the month
+    for (int day = 1; day <= daysInMonth; ++day) {
+        cout << setw(5) << day;
+        if ((day + startDay) % 7 == 0) {
+            cout << endl;
+        }
+    }
+    cout << endl << endl;
+
+    // Update startDay for the next month
+    startDay = (startDay + daysInMonth) % 7;
+}
+
+int main() {
+    int startDay = 0; // January 1, 2023 is a Sunday
+    int daysInMonth;
+
+    for (int month = 1; month <= 12; ++month) {
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                daysInMonth = 31;
+                break;
+            case 4: case 6: case 9: case 11:
+                daysInMonth = 30;
+                break;
+            case 2:
+                daysInMonth = 28; // 2023 is not a leap year
+                break;
+        }
+        printMonth(month, startDay, daysInMonth);
+    }
+
+    return 0;
+}
